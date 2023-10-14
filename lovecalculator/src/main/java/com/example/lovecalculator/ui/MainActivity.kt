@@ -40,7 +40,6 @@ class MainActivity : ComponentActivity(), MainView {
     }
 
     override fun changeFragment(loveModel: LoveModel) {
-        Log.d("mine", "you get there you bastard")
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("model", loveModel)
         startActivity(intent)

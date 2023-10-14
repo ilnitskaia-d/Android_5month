@@ -15,7 +15,7 @@ class HistoryActivity : ComponentActivity() {
 
         val list = App.appDatabase.loveDao().getAll()
         list.forEach { model ->
-            binding.tvHistory.append("${model.fname}${model.sname}${model.percentage}${model.result}")
+            binding.tvHistory.append("${model.fname} + ${model.sname} = ${model.percentage}% \n${model.result}\n----\n")
         }
     }
 

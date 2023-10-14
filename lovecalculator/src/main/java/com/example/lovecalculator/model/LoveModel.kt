@@ -6,6 +6,9 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.util.Date
 
 @Parcelize
 @Entity(tableName = "love-table")
