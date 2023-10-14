@@ -2,9 +2,10 @@ package com.example.lovecalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import com.example.lovecalculator.databinding.ActivityHistoryBinding
 
-class HistoryActivity : AppCompatActivity() {
+class HistoryActivity : ComponentActivity() {
     lateinit var binding: ActivityHistoryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,14 +15,8 @@ class HistoryActivity : AppCompatActivity() {
 
         val list = App.appDatabase.loveDao().getAll()
         list.forEach { model ->
-            binding.tvHistory.text = "${model.fname}${model.sname}${model.percentage}${model.result}"
-        }
-        initButtons()
-    }
-
-    private fun initButtons() {
-        with(binding){
-
+            binding.tvHistory.append("${model.fname}${model.sname}${model.percentage}${model.result}")
         }
     }
+
 }
